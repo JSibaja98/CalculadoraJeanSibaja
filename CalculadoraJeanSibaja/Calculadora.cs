@@ -12,12 +12,12 @@ namespace CalculadoraJeanSibaja
 {
     public partial class Calculadora : Form
     {
-        private Actions calc;
+        private Actions calculadora;
         private string operation;
 
         public Calculadora()
         {
-            this.calc = new Actions();
+            this.calculadora = new Actions();
             InitializeComponent();
         }
 
@@ -45,8 +45,8 @@ namespace CalculadoraJeanSibaja
 
                     if (numberTwo.Length == 2 && (numberTwo[1] != null && numberTwo[1] != ""))
                     {
-                        calc.numberTwo = double.Parse(numberTwo[1]);
-                        tbxDisplay.Text = calc.calculation(operation);
+                        calculadora.numberTwo = double.Parse(numberTwo[1]);
+                        tbxDisplay.Text = calculadora.calculation(operation);
                         operation = "";
                     }
                 }
@@ -64,7 +64,7 @@ namespace CalculadoraJeanSibaja
                 this.cleanInput();
                 if (tbxDisplay.Text.Trim() != "")
                 {
-                    calc.mMinus(double.Parse(tbxDisplay.Text.Trim()));
+                    calculadora.mMinus(double.Parse(tbxDisplay.Text.Trim()));
                     tbxDisplay.Text = "";
                 }
             }
@@ -79,10 +79,10 @@ namespace CalculadoraJeanSibaja
             try
             {
                 this.cleanInput();
-                if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
+                if (calculadora.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "+";
-                    calc.numberOne = double.Parse(tbxDisplay.Text.Trim());
+                    calculadora.numberOne = double.Parse(tbxDisplay.Text.Trim());
                     tbxDisplay.Text = tbxDisplay.Text + "+";
                 }
             }
@@ -151,10 +151,10 @@ namespace CalculadoraJeanSibaja
             try
             {
                 this.cleanInput();
-                if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
+                if (calculadora.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "-";
-                    calc.numberOne = double.Parse(tbxDisplay.Text.Trim());
+                    calculadora.numberOne = double.Parse(tbxDisplay.Text.Trim());
                     tbxDisplay.Text = tbxDisplay.Text + "-";
                 }
             }
@@ -167,7 +167,7 @@ namespace CalculadoraJeanSibaja
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbxDisplay.Text = "";
-            calc.clear();
+            calculadora.clear();
             operation = "";
         }
 
@@ -188,7 +188,7 @@ namespace CalculadoraJeanSibaja
                 }
 
 
-                calc.clearNumbers();
+                calculadora.clearNumbers();
                 operation = "";
                 tbxDisplay.Text = txtDisplay;
             }
@@ -203,10 +203,10 @@ namespace CalculadoraJeanSibaja
             try
             {
                 this.cleanInput();
-                if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
+                if (calculadora.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "*";
-                    calc.numberOne = double.Parse(tbxDisplay.Text.Trim());
+                    calculadora.numberOne = double.Parse(tbxDisplay.Text.Trim());
                     tbxDisplay.Text = tbxDisplay.Text + "*";
                 }
             }
@@ -221,10 +221,10 @@ namespace CalculadoraJeanSibaja
             try
             {
                 this.cleanInput();
-                if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
+                if (calculadora.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "/";
-                    calc.numberOne = double.Parse(tbxDisplay.Text.Trim());
+                    calculadora.numberOne = double.Parse(tbxDisplay.Text.Trim());
                     tbxDisplay.Text = tbxDisplay.Text + "/";
                 }
             }
@@ -246,8 +246,8 @@ namespace CalculadoraJeanSibaja
 
                     if (numbers.Length == 2 && (numbers[1] != null && numbers[1] != ""))
                     {
-                        calc.numberTwo = double.Parse(numbers[1]);
-                        tbxDisplay.Text = calc.mod().ToString();
+                        calculadora.numberTwo = double.Parse(numbers[1]);
+                        tbxDisplay.Text = calculadora.mod().ToString();
                         operation = "";
                     }
                 }
@@ -269,7 +269,7 @@ namespace CalculadoraJeanSibaja
 
                     if (tbxDisplay.Text.IndexOfAny(operators) == -1)
                     {
-                        calc.memoryStorage(double.Parse(tbxDisplay.Text.Trim()));
+                        calculadora.memoryStorage(double.Parse(tbxDisplay.Text.Trim()));
                         tbxDisplay.Text = "";
                     }
                 }
@@ -282,14 +282,14 @@ namespace CalculadoraJeanSibaja
 
         private void btnMemoryClear_Click(object sender, EventArgs e)
         {
-            calc.memoryClear();
+            calculadora.memoryClear();
             tbxDisplay.Text = "";
         }
 
         private void btnMemoryRecall_Click(object sender, EventArgs e)
         {
             this.cleanInput();
-            tbxDisplay.Text = tbxDisplay.Text + calc.memoryRecall();
+            tbxDisplay.Text = tbxDisplay.Text + calculadora.memoryRecall();
         }
 
         private void btnMemoryPlus_Click(object sender, EventArgs e)
@@ -299,7 +299,7 @@ namespace CalculadoraJeanSibaja
                 this.cleanInput();
                 if (tbxDisplay.Text.Trim() != "")
                 {
-                    calc.mPlus(double.Parse(tbxDisplay.Text.Trim()));
+                    calculadora.mPlus(double.Parse(tbxDisplay.Text.Trim()));
                     tbxDisplay.Text = "";
                 }
             }
