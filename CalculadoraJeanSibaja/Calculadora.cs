@@ -23,13 +23,13 @@ namespace CalculadoraJeanSibaja
 
         private void btnNum0_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "0";
         }
 
         private void btnDecimal_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + ",";
         }
 
@@ -37,7 +37,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (operation != null && operation != "")
                 {
 
@@ -61,7 +61,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (tbxDisplay.Text.Trim() != "")
                 {
                     calc.mMinus(double.Parse(tbxDisplay.Text.Trim()));
@@ -78,7 +78,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "+";
@@ -94,55 +94,55 @@ namespace CalculadoraJeanSibaja
 
         private void btnNum3_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "3";
         }
 
         private void btnNum2_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "2";
         }
 
         private void btnNum1_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "1";
         }
 
         private void btnNum4_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "4";
         }
 
         private void btnNum5_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "5";
         }
 
         private void btnNum6_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "6";
         }
 
         private void btnNum7_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "7";
         }
 
         private void btnNum8_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "8";
         }
 
         private void btnNum9_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + "9";
         }
 
@@ -150,7 +150,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "-";
@@ -175,7 +175,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 string txtDisplay = tbxDisplay.Text.Trim();
 
                 if (txtDisplay.Length > 1)
@@ -202,7 +202,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "*";
@@ -220,7 +220,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (calc.numberOne == 0.0 && tbxDisplay.Text.Trim() != "")
                 {
                     operation = "/";
@@ -239,7 +239,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (operation != "" && operation == "/")
                 {
                     string[] numbers = tbxDisplay.Text.Split('/');
@@ -262,7 +262,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (tbxDisplay.Text.Trim() != "")
                 {
                     char[] operators = { '+', '-', '/', '*' };
@@ -288,7 +288,7 @@ namespace CalculadoraJeanSibaja
 
         private void btnMemoryRecall_Click(object sender, EventArgs e)
         {
-            this.cleanConsole();
+            this.cleanInput();
             tbxDisplay.Text = tbxDisplay.Text + calc.memoryRecall();
         }
 
@@ -296,7 +296,7 @@ namespace CalculadoraJeanSibaja
         {
             try
             {
-                this.cleanConsole();
+                this.cleanInput();
                 if (tbxDisplay.Text.Trim() != "")
                 {
                     calc.mPlus(double.Parse(tbxDisplay.Text.Trim()));
@@ -309,7 +309,7 @@ namespace CalculadoraJeanSibaja
             }
         }
 
-        private void cleanConsole()
+        private void cleanInput()
         {
             if (tbxDisplay.Text == "SYNTAX ERROR" || tbxDisplay.Text == "You typed more than 20 numbers.")
             {
